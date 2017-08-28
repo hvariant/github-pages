@@ -1,10 +1,10 @@
 ---
-title: "solution to GOMP\_4.0 error when installing xgboost using anaconda and other problems"
+title: "solution to some problems when installing xgboost in anaconda"
 date: 2017-08-28
 tags: [xgboost, anaconda, conda]
 ---
 
-This is due to the version of gcc in anaconda is too low.
+If xgboost complains about `GOMP\_4.0`, this is due to the version of gcc in anaconda is too low.
 
 To resolve:
 
