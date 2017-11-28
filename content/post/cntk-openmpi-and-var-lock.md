@@ -24,5 +24,3 @@ To fix this use sudo when running cntk, and if you want to use cntk as backend f
 ```
     sudo -H LD_LIBRARY_PATH=<path-to-openmpi-1.10.x>/build/lib python <keras-script>.py
 ```
-
-- Here's hoping that Microsoft fix this bug soon.
