@@ -1,6 +1,6 @@
 ---
 title:  "Readline Movement and Other Tricks"
-date:   2017-02-02 13:45:00 +0800
+date:   2017-02-02
 tags: [readline,shell]
 ---
 

@@ -16,8 +16,8 @@ tags: [cntk, openmpi, deep learning, keras]
     make -j <number of threads> all install
 ```
 
-- Due to this [bug](https://github.com/Microsoft/CNTK/issues/62) (which somehow hasn't been fixed after one and half years, good job team Microsoft), cntk will fail if current user doesn't have write access to `/var/lock`.
-To fix this use sudo when running cntk, and if you want to use cntk as backend for keras, copy `~/.keras/` to `/root/`. Alternatively, compile cntk from source and patch it yourself, which is probably going to be [very tedious](https://docs.microsoft.com/en-us/cognitive-toolkit/setup-linux-binary-manual).
+- Due to this [bug](https://github.com/Microsoft/CNTK/issues/62) (which somehow hasn't been fixed after one and half years, good job team Microsoft), cntk will fail if the current user doesn't have write access to `/var/lock`.
+To fix this use sudo when running cntk, and if you want to use cntk as the backend for keras, copy `~/.keras/` to `/root/`. Alternatively, compile cntk from source and patch it yourself, which is probably going to be [very tedious](https://docs.microsoft.com/en-us/cognitive-toolkit/setup-linux-binary-manual).
 
 - Finally, to run cntk, you have to add the path of the previous compiled openmpi 1.10.x libraries to `LD_LIBRARY_PATH` and use sudo, i.e.:
 

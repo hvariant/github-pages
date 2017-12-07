@@ -1,6 +1,6 @@
 ---
 title:  "Intellij Setup and Shortcuts"
-date:   2017-08-26 23:45:00 +1000
+date:   2017-08-26
 tags: [intellij]
 ---
 
