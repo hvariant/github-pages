@@ -195,5 +195,14 @@ Install [Anaconda](https://www.anaconda.com/download/#linux), then call
 [this function](https://github.com/hvariant/dotfiles/blob/13aa7efab7278d1e7b7c9803cb28f3eb61664987/zshrc#L74)
 in zsh to setup conda path.
 
+Misc
+---
+
+- Firefox
+    - setup sync
+    - in `about:config`
+        * change `media.autoplay.enabled` to `false`
+        * change `browser.showQuitWarning` to `true`
+
 TBC
 ---
