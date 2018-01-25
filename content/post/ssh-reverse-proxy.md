@@ -23,17 +23,12 @@ on machine A.
 Finally, run the following command to setup the proxy:
 
 ```
-
-#!/bin/bash
-
-set -x
-
 serverb="<remote-server-address>"
 user="<user-on-remote-server>"
-port="<local-machine-ssh-port>"
-port_remote="<remote-machine-ssh-port>"
+port_remote="<remote-machine-port>"
+port_local="<local-machine-ssh-port>"
 
-ssh -v -o ExitOnForwardFailure=yes -N -f -R 0.0.0.0:${port_remote}:localhost:${local} ${user}@$serverb
+ssh -v -o ExitOnForwardFailure=yes -N -f -R 0.0.0.0:${port_remote}:localhost:${port_local} ${user}@$serverb
 ```
 
 if the command runs successfully, then the proxy is established. Go ahead and test it.
@@ -41,7 +36,7 @@ if the command runs successfully, then the proxy is established. Go ahead and te
 To enable automatic reconnect, it's also possible to use `autossh` instead:
 
 ```
-autossh -M 20000 -v -o ExitOnForwardFailure=yes -N -f -R 0.0.0.0:${port_remote}:localhost:${local} ${user}@$serverb
+autossh -M 20000 -v -o ExitOnForwardFailure=yes -N -f -R 0.0.0.0:${port_remote}:localhost:${port_local} ${user}@$serverb
 ```
 
 Reference: [this guide](https://toic.org/blog/2009/reverse-ssh-port-forwarding/)
