@@ -1,5 +1,3 @@
-REPO_DIR=../hvariant.github.io
-
 build:
 	rm -rf public
 	hugo
