@@ -1,10 +1,11 @@
 HUGO_OUTPUT_DIR=public
 DEV_BRANCH_NAME=dev
+DATE=$(shell date --iso=seconds)
 
 # taken from https://jaspervdj.be/hakyll/tutorials/github-pages-tutorial.html
 # with slight modifications
 deploy:
-	git stash
+	./check.sh
 	git checkout $(DEV_BRANCH_NAME)
 	rm -rf $(HUGO_OUTPUT_DIR)
 	hugo -d $(HUGO_OUTPUT_DIR)
@@ -17,8 +18,7 @@ deploy:
          --delete-excluded        \
          $(HUGO_OUTPUT_DIR)/ .
 	git add -A
-	git commit -m "automatic commit ${DATE}"
+	git commit -m "automatic commit ${DATE}" || echo "nothing changed, no need to commit"
 	git push origin master:master
 	git checkout $(DEV_BRANCH_NAME)
 	git branch -D master
-	git stash pop
