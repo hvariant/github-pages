@@ -1,6 +1,3 @@
 build:
-	rm -rf public
-	hugo
-
-deploy:
-	cp -r public/* ${REPO_DIR}
+	rm -rf docs
+	hugo -d docs
